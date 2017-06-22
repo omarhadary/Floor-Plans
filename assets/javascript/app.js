@@ -1,4 +1,4 @@
-var FloorPlanImages= {
+var floorPlanImages= {
     "Casa Nova": {
         name: "casaNova",
         imgURL: "assets/img/casaNova",
@@ -72,3 +72,12 @@ var FloorPlanImages= {
         rentAmount: 525
     }
 };
+
+// function to show all listings when page loads
+//      on load, loop through floorPlanImages and pass to #floor-plans
+// function to use bedroom count onclick
+//      on release of bedroom count button, clear the #floor-plans, loop through the floorPlansImages and only push the results matching
+// function to use rent toggle
+    // on release, check value of the newly position bracket, clear the results in the and loop through the floorPlans images to update the results in the #floor-plan
+// On Click More Filters, expand the filters area. On click of cancel button, go back to minimal filters area, onclick of apply button, filter the floorPlanImages by the bedroom and rent parameters already entered
+// at mobile screen, only show a filters button and expand the filters screen once clicked
