@@ -9,6 +9,13 @@
     width: -14px
 }*/
 
+#filterSection {
+  bottom: 0;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+}
+
 @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
 /*listingsResultsSection {
     padding: 25%;
