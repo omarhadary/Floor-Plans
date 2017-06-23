@@ -13,85 +13,75 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="row" id="resultsSection">
+		<div class="row resultsSection">
 			<!--where images of floor plans will populate-->
 			<div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 floorPlans"></div>
 		</div>
-		<div class="row" id="filterSection">
-			<div aria-multiselectable="true" class="row" id="accordion">
-				<div class="row landingPageFilterView">
-					<div class="row resetFiltersRow">
-						<div class="col-md-3">
-							Filters
+		<div aria-multiselectable="true" class="row filtersSection" id="accordion">
+			<div class="row resetFiltersRow">
+				<div class="col-md-3">
+					Filters
+				</div>
+				<div class="col-md-3 col-md-offset-9" role="button">
+					Reset all
+				</div>
+			</div>
+			<div class="row landingPageFiltersRow">
+				<div class="col-md-3">
+					Bedrooms
+				</div>
+				<div class="col-md-3">
+					Rent
+				</div>
+				<div class="col-md-3">
+					Move In Date
+				</div>
+				<div class="col-md-3">
+					<a aria-controls="collapseOne" aria-expanded="false" data-toggle="collapse" href="#collapseOne" id="moreFiltersButton" role="button">More Filters</a>
+				</div>
+			</div>
+			<div class="row moreFiltersRow collapse" id="collapseOne">
+				<div class="row moreFiltersSelectionRow">
+					<div class="col-md-3">
+						Bathrooms
+					</div>
+					<div class="col-md-3">
+						SQFT
+					</div>
+					<div class="col-md-3">
+						<div class="row">
+							Amenities
 						</div>
-						<div class="col-md-3 col-md-offset-9" role="button">
-							Reset all
+						<div class="row listOfAmenities">
+							<div class="col-md-6">
+								<ul id="leftAmenitieslist">
+									<li>air conditioning</li>
+									<li>assigned parking</li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<ul id="rightAmenitiesList">
+									<li>balcony</li>
+									<li>parking</li>
+								</ul>
+							</div>
 						</div>
-					</div>
-					<div class="col-md-3">
-						Bedrooms
-					</div>
-					<div class="col-md-3">
-						Rent
-					</div>
-					<div class="col-md-3">
-						Move In Date
-					</div>
-					<div class="col-md-3">
-						<a aria-controls="collapseOne" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" id="moreFiltersButton" role="button">More Filters</a>
-					</div>
-					<div class="panel-heading moreFiltersView" id="headingOne" role="tab"></div>
-					<div aria-labelledby="headingOne" class="panel-collapse collapse" id="collapseOne" role="tabpanel">
-						<div class="row moreFiltersView">
-							<div class="col-md-3">
-								Bathrooms
-							</div>
-							<div class="col-md-3">
-								SQFT
-							</div>
-							<div class="col-md-3">
-								<div class="row">Amenities</div>
-                                <div class="row listOfAmenities">
-                                    <div class="col-md-6">
-                                        <ul>
-                                            <li>air conditioning</li>
-                                            <li>assigned parking</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <ul>
-                                            <li>balcony</li>
-                                            <li>parking</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="row moreAmenitiesRow">
-                                    <div class="col-md-6 col-md-offset-6" role="button">More</div>
-                                </div>
-                                </div>
+						<div class="row moreAmenitiesRow">
+							<div class="col-md-6 col-md-offset-6" id="moreAmenitiesButton" role="button">
+								More
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading" id="headingTwo" role="tab">
-						<h4 class="panel-title"><a aria-controls="collapseTwo" aria-expanded="true" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role="button">Collapsible Group Item #2</a></h4>
+				<div class="row applyFiltersRow">
+					<div class="col-md-3"></div>
+					<div class="col-md-3" id="cancelFiltersButton" role="button">
+						Cancel
 					</div>
-					<div aria-labelledby="headingTwo" class="panel-collapse collapse" id="collapseTwo" role="tabpanel">
-						<div class="panel-body">
-							Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-						</div>
+					<div class="col-md-3" id="applyFiltersButton" role="button">
+						Apply Filters
 					</div>
-				</div>
-				<div class="panel panel-default">
-					<div class="panel-heading" id="headingThree" role="tab">
-						<h4 class="panel-title"><a aria-controls="collapseThree" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseThree" role="button">Collapsible Group Item #3</a></h4>
-					</div>
-					<div aria-labelledby="headingThree" class="panel-collapse collapse" id="collapseThree" role="tabpanel">
-						<div class="panel-body">
-							Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-						</div>
-					</div>
+					<div class="col-md-3"></div>
 				</div>
 			</div>
 		</div>

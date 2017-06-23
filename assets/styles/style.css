@@ -1,7 +1,9 @@
-/*#resultsSection, .floorPlans {
+/*.resultsSection, .floorPlans {
     max-height: 1%;
     max-width: 1%
 }*/
+
+
 /*.floorPlans {
     margin: 1%;
     padding: 1%;
@@ -9,21 +11,21 @@
     width: -14px
 }*/
 
-/*#resultsSection, .floorPlans {
+
+/*.resultsSection, .floorPlans {
     max-width: 100%;
     height: auto;
     display: block
 }*/
 
-#filterSection {
-  bottom: 0;
-  background-color: white;
-  position: fixed;
-  width: 100%;
+.filtersSection {
+	bottom: 0;
+	background-color: white;
+	position: fixed;
+	width: 100%;
 }
-
 @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
-/*listingsResultsSection {
+	/*listingsResultsSection {
     padding: 25%;
 }*/
 }
@@ -31,5 +33,5 @@
 
 }
 @media (min-width: @screen-lg-min) {
-
+    
 }
