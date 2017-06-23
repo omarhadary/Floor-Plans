@@ -1,0 +1,22 @@
+/*#listingsResultsSection, #floorPlans {
+    max-height: 1%;
+    max-width: 1%
+}*/
+/*.floorPlans {
+    margin: 1%;
+    padding: 1%;
+    height: 1px;
+    width: -14px
+}*/
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+/*listingsResultsSection {
+    padding: 25%;
+}*/
+}
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+
+}
+@media (min-width: @screen-lg-min) {
+
+}

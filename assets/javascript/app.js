@@ -1,80 +1,89 @@
-var floorPlanImages= {
-    "Casa Nova": {
+var floorPlanImagesArray = [
+    {
         name: "casaNova",
-        imgURL: "assets/img/casaNova",
+        imgURL: "assets/img/casaNova.jpg",
         bedroomCount: 0,
         rentAmount: 1200
     },
-    "Monte Cristo": {
+    {
         name: "monteCristo",
-        imgURL: "assets/img/monteCristo",
+        imgURL: "assets/img/monteCristo.jpg",
         bedroomCount: 1,
         rentAmount: 1650 
     },
-    "Shangri-La": {
+    {
         name: "shangriLa",
-        imgURL: "assets/img/shangriLa",
+        imgURL: "assets/img/shangriLa.jpg",
         bedroomCount: 3,
         rentAmount: 1825
     },
-    "Versailles": {
+    {
         name: "versailles",
-        imgURL: "assets/img/versailles",
+        imgURL: "assets/img/versailles.jpg",
         bedroomCount: 2,
         rentAmount: 4000
     },
-    "Xanadu": {
+    {
         name: "xanadu",
-        imgURL: "assets/img/xanadu",
+        imgURL: "assets/img/xanadu.jpg",
         bedroomCount: 2,
         rentAmount: 1525
     },
-    "Hogwarts": {
+    {
         name: "hogwarts",
-        imgURL: "assets/img/hogwarts",
+        imgURL: "assets/img/hogwarts.jpg",
         bedroomCount: 3,
         rentAmount: 1825
     },
-    "Camelot": {
+    {
         name: "camelot",
-        imgURL: "assets/img/camelot",
+        imgURL: "assets/img/camelot.jpg",
         bedroomCount: 2,
         rentAmount: 1825
     },
-    "El Dorado": {
+    {
         name: "elDorado",
-        imgURL: "assets/img/elDorado",
+        imgURL: "assets/img/elDorado.jpg",
         bedroomCount: 1,
         rentAmount: 1825
     },
-    "Vanity Fair": {
+    {
         name: "vanityFair",
-        imgURL: "assets/img/vanityFair",
+        imgURL: "assets/img/vanityFair.jpg",
         bedroomCount: 2,
         rentAmount: 1825
     },
-    "Atlantis": {
+    {
         name: "atlantis",
-        imgURL: "assets/img/atlantis",
+        imgURL: "assets/img/atlantis.jpg",
         bedroomCount: 1,
         rentAmount: 1825
     },
-    "Utopia": {
+    {
         name: "utopia",
-        imgURL: "assets/images/utopia",
+        imgURL: "assets/img/utopia.jpg",
         bedroomCount: 3,
         rentAmount: 2825
     },
-    "Liliput": {
+    {
         name: "liliput",
-        imgURL: "assets/images/liliput",
+        imgURL: "assets/img/liliput.jpg",
         bedroomCount: 0,
         rentAmount: 525
     }
-};
+];
 
-// function to show all listings when page loads
-//      on load, loop through floorPlanImages and pass to #floor-plans
+// function to add all listings on page load
+$(function populateFloorPlans() {
+    $(".floorPlans").empty();
+
+    for (var i = 0; i < floorPlanImagesArray.length; i++){
+        var floorPlanImage = $('<img>');
+        floorPlanImage.attr('src', floorPlanImagesArray[i].imgURL);
+        $(".floorPlans").append(floorPlanImage);
+    }
+});
+
 // function to use bedroom count onclick
 //      on release of bedroom count button, clear the #floor-plans, loop through the floorPlansImages and only push the results matching
 // function to use rent toggle
