@@ -18,22 +18,28 @@
 			<div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 floorPlans"></div>
 		</div>
 		<div class="row" id="filterSection">
-			<div aria-multiselectable="true" class="panel-group" id="accordion" role="tablist">
-				<div class="row landingPageFilterView">
-                <div class="panel panel-default">
-					<div class="panel-heading" id="headingOne" role="tab">
-						<h4 class="panel-title"><a aria-controls="collapseOne" aria-expanded="true" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button">Collapsible Group Item #1</a></h4>
+			<div aria-multiselectable="true" class="row" id="accordion">
+                <div class="row landingPageFilterView">
+                    <div class="row resetFiltersRow">
+                        <div class="col-md-3">Filters</div>
+                        <div class="col-md-3 col-md-offset-9">Reset all</div>    
+                    </div>
+                    <div class="col-md-3">Bedrooms</div>
+                    <div class="col-md-3">Rent</div>
+                    <div class="col-md-3">Move In Date</div>
+                    <div class="col-md-3"><a aria-controls="collapseOne" aria-expanded="false" data-parent="#accordion" data-toggle="collapse" href="#collapseOne" role="button" id="moreFiltersButton">More Filters</a></div>
+					<div class="panel-heading moreFiltersView" id="headingOne" role="tab">
+						<!--bathrooms, sqft and amenities-->
 					</div>
-					<div aria-labelledby="headingOne" class="panel-collapse collapse in" id="collapseOne" role="tabpanel">
+					<div aria-labelledby="headingOne" class="panel-collapse collapse" id="collapseOne" role="tabpanel">
 						<div class="panel-body">
 							Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
 						</div>
 					</div>
 				</div>
-				</div>
 				<div class="panel panel-default">
 					<div class="panel-heading" id="headingTwo" role="tab">
-						<h4 class="panel-title"><a aria-controls="collapseTwo" aria-expanded="false" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role="button">Collapsible Group Item #2</a></h4>
+						<h4 class="panel-title"><a aria-controls="collapseTwo" aria-expanded="true" class="collapsed" data-parent="#accordion" data-toggle="collapse" href="#collapseTwo" role="button">Collapsible Group Item #2</a></h4>
 					</div>
 					<div aria-labelledby="headingTwo" class="panel-collapse collapse" id="collapseTwo" role="tabpanel">
 						<div class="panel-body">

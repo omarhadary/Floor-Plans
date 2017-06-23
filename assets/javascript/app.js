@@ -73,15 +73,23 @@ var floorPlanImagesArray = [
     }
 ];
 
-// function to add all listings on page load
-$(function populateFloorPlans() {
-    $(".floorPlans").empty();
+$(function() {
+    // function to hide the reset all filters row
+    $(".resetFiltersRow").hide();
 
+    $(".floorPlans").empty();
+    // function to add all listings on page load
     for (var i = 0; i < floorPlanImagesArray.length; i++){
         var floorPlanImage = $('<img>');
         floorPlanImage.attr('src', floorPlanImagesArray[i].imgURL);
         $(".floorPlans").append(floorPlanImage);
     }
+});
+
+// function to show reset all filters row
+$("#moreFiltersButton").click(function(){
+    $(".resetFiltersRow").show();
+    $("#moreFiltersButton").hide();
 });
 
 // function to use bedroom count onclick
