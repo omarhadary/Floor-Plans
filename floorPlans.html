@@ -3,20 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<meta charset="UTF-8">
-	<meta content="IE=edge" http-equiv="X-UA-Compatible">
-	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<!--<meta content="IE=edge" http-equiv="X-UA-Compatible">-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="assets/img/favicon.ico" rel="icon" type="image/x-icon">
 	<link href="./assets/styles/reset.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+	<link href = "https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
     <link href="./assets/styles/style.css" rel="stylesheet">
 	<title>Floor Plans</title>
 </head>
 <body>
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row resultsSection">
-			<!--where images of floor plans will populate-->
-			<div class="floorPlans img-responsive"></div>
+            <!--where images of floor plans will populate-->
+			<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+                <div class="floorPlans img-responsive"></div>
+            </div>
 		</div>
 		<div aria-multiselectable="true" class="row filtersSection" id="accordion">
 			<div class="row resetFiltersRow">
@@ -39,15 +41,20 @@
                             </div>
                         </div>
 				</div>
-				<div class="col-md-3">
-                    <!--<label><span class="glyphicon glyphicon-bed"></span> RENT</label>-->
+				<div class="col-md-2">
                     <p>
-                        <label for = "price">RENT</label>
-                        <input type = "text" id = "price" 
-                        style = "border:0; color:#b9cd6d; font-weight:bold;">
+                        <label><span class="glyphicon glyphicon-bed"></span> RENT</label>
                     </p>
-                    <div id = "slider-3"></div>
+                    <div id = "sliderRentAmount"></div>
+                    <input type = "text" id = "rentPrice">
+                    <!--<p>
+                        <label for = "minRentPrice">Min</label>
+                        <input type = "text" id = "minRentPrice" 
+                        style = "border:0; color:#b9cd6d; font-weight:bold;">
+                    </p>-->
+                    <!--<div id="maxRentPrice"></div>-->
 				</div>
+                <div class="col-md-1"></div>
 				<div class="col-md-2">
 					<label><span class="glyphicon glyphicon-calendar"></span> MOVE IN DATE</label>
                     <div class="form-group">
@@ -76,10 +83,15 @@
                             </div>
                         </div>
 					</div>
-					<div class="col-md-3">
-						SQFT
-					</div>
-					<div class="col-md-4">
+				<div class="col-md-2">
+                    <p>
+                        <label><span class="glyphicon glyphicon-bed"></span> SQFT</label>
+                    </p>
+                    <div id = "sliderSQFT"></div>
+                    <input type = "text" id = "area">
+				</div>
+					<div class="col-md-1"></div>
+                    <div class="col-md-4">
 						<label><span class="glyphicon glyphicon-resize-horizontal"></span> AMENITIES</label>
 						<div class="row listOfAmenities">
 							<div class="col-md-6" id="leftAmenitieslist">

@@ -72,24 +72,98 @@ $(function() {
 		$(".floorPlans").append(floorPlanImage);
 	}
 });
-// rent range picker
+// rent range pocker take 2 
+// $("#slider").slider({
+//     range: true,
+//     min: 100,
+//     max: 500,
+//     step: 10,
+//     values: [100, 500],
+//     slide: function(event, ui) {
+//         var delay = function() {
+//             var handleIndex = $(ui.handle).data('index.uiSliderHandle');
+//             var label = handleIndex == 0 ? '#min' : '#max';
+//             $(label).html('$' + ui.value).position({
+//                 my: 'center top',
+//                 at: 'center bottom',
+//                 of: ui.handle,
+//                 offset: "0, 10"
+//             });
+//         };
+        
+//         // wait for the ui.handle to set its position
+//         setTimeout(delay, 5);
+//     }
+// });
+
+// $('#minRentPrice').html('$' + $('#slider').slider('values', 0)).position({
+//     my: 'center top',
+//     at: 'center bottom',
+//     of: $('#slider a:eq(0)'),
+//     offset: "0, 10"
+// });
+
+// $('#maxRentPrice').html('$' + $('#slider').slider('values', 1)).position({
+//     my: 'center top',
+//     at: 'center bottom',
+//     of: $('#slider a:eq(1)'),
+//     offset: "0, 10"
+// });
+
+// rent range slider
 $(function() {
-    $( "#slider-3" ).slider({
+    $('.ui-slider .ui-slider-handle').prepend('<img id="sliderButton" src="../img/sliderButton.png" />')
+    $( "#sliderRentAmount" ).slider({
         range:true,
         min: 500,
         max: 4000,
         values: [ 500, 4000 ],
         slide: function( event, ui ) {
-        $( ".ui-slider-handle" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+        $( "#rentPrice" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+    },
+    create: function(event, ui) {
+            var minValue=$(this).slider('values',0);
+            var maxValue=$(this).slider('values',1);
+            $(this).find('.ui-slider-handle').append("$"+$( "#sliderRentAmount" ).slider( "values", 0 ));
         }
     });
-    $( ".ui-slider-handle" ).val( "$" + $( "#slider-3" ).slider( "values", 0 ) +
-        " - $" + $( "#slider-3" ).slider( "values", 1 ) );
+    $( "#rentPrice" ).val( "$" + $( "#sliderRentAmount" ).slider( "values", 0 ) +
+        " - $" + $( "#sliderRentAmount" ).slider( "values", 1 ) );
+    // $( "#minRentPrice" ).val( "$" + $( "#sliderRentAmount" ).slider( "values", 0 ));
 });
+$( "#minRentPrice" ).val( "$" + $( "#slider" ).slider( "values", 0 ));
+// display min rent value below slider
+// $('#minRentPrice').html('$' + $('#slider').slider('values', 0)).position({
+//     my: 'center top',
+//     at: 'center bottom',
+//     // of: $('#slider a:eq(0)'),
+//     offset: "0, 10"
+// });
 // move in date picker
 // $(function() {
 //     $("#datepicker").datepicker();
 // });
+// area range slider
+$(function() {
+    // $('.ui-slider .ui-slider-handle').prepend('<img id="sliderButton" src="../img/sliderButton.png" />')
+    $( "#sliderSQFT" ).slider({
+        range:true,
+        min: 850,
+        max: 7500,
+        values: [ 850, 7500 ],
+        step: 50,
+        slide: function( event, ui ) {
+        $( "#area" ).val(ui.values[ 0 ] + " sq. ft. - " + ui.values[ 1 ] +" sq.ft.");
+    },
+    create: function(event, ui) {
+            var minValue=$(this).slider('values',0);
+            var maxValue=$(this).slider('values',1);
+            $(this).find('.ui-slider-handle').append("$"+$( "#sliderSQFT" ).slider( "values", 0 ));
+        }
+    });
+    $( "#area" ).val($( "#sliderSQFT" ).slider( "values", 0 ) +
+        " sq. ft - " + $( "#sliderSQFT" ).slider( "values", 1 ) +" sq. ft.");
+});
 // show row with reset all filters button and hid more filters button
 $("#moreFiltersButton").click(function() {
 	$(".resetFiltersRow").show();
