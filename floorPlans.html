@@ -8,7 +8,8 @@
 	<link href="assets/img/favicon.ico" rel="icon" type="image/x-icon">
 	<link href="./assets/styles/reset.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<link href="./assets/styles/style.css" rel="stylesheet">
+	<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+    <link href="./assets/styles/style.css" rel="stylesheet">
 	<title>Floor Plans</title>
 </head>
 <body>
@@ -28,15 +29,29 @@
 			</div>
 			<div class="row landingPageFiltersRow">
 				<div class="col-md-3">
-					Bedrooms
+                    <label><span class="glyphicon glyphicon-bed"></span> BEDROOMS</label>
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default">STUDIO</button>
+                                <button type="button" class="btn btn-default">1</button>
+                                <button type="button" class="btn btn-default">2</button>
+                                <button type="button" class="btn btn-default">3+</button>
+                            </div>
+                        </div>
 				</div>
 				<div class="col-md-3">
-					Rent
+                    <!--<label><span class="glyphicon glyphicon-bed"></span> RENT</label>-->
+                    <p>
+                        <label for = "price">RENT</label>
+                        <input type = "text" id = "price" 
+                        style = "border:0; color:#b9cd6d; font-weight:bold;">
+                    </p>
+                    <div id = "slider-3"></div>
 				</div>
 				<div class="col-md-2">
 					<label><span class="glyphicon glyphicon-calendar"></span> MOVE IN DATE</label>
                     <div class="form-group">
-                        <div class='input-group'>
+                        <div class='input-group date' id="datepicker">
                             <input type='text' placeholder="Any Timeframe" class="form-control"/>
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-triangle-bottom"></span>
@@ -51,7 +66,15 @@
 			<div class="moreFiltersRow collapse" id="collapseOne">
 				<div class="row moreFiltersSelectionRow">
 					<div class="col-md-3">
-						Bathrooms
+                    <label><span class="glyphicon glyphicon-shower"></span> BATHROOMS</label>
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-default">ANY</button>
+                                <button type="button" class="btn btn-default">1+</button>
+                                <button type="button" class="btn btn-default">2+</button>
+                                <button type="button" class="btn btn-default">3+</button>
+                            </div>
+                        </div>
 					</div>
 					<div class="col-md-3">
 						SQFT
@@ -98,6 +121,8 @@
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js">
 	</script> 
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
+    </script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 	</script> 
 	<script src="./assets/javascript/app.js" type="text/javascript">

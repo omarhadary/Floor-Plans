@@ -72,6 +72,24 @@ $(function() {
 		$(".floorPlans").append(floorPlanImage);
 	}
 });
+// rent range picker
+$(function() {
+    $( "#slider-3" ).slider({
+        range:true,
+        min: 500,
+        max: 4000,
+        values: [ 500, 4000 ],
+        slide: function( event, ui ) {
+        $( ".ui-slider-handle" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+        }
+    });
+    $( ".ui-slider-handle" ).val( "$" + $( "#slider-3" ).slider( "values", 0 ) +
+        " - $" + $( "#slider-3" ).slider( "values", 1 ) );
+});
+// move in date picker
+// $(function() {
+//     $("#datepicker").datepicker();
+// });
 // show row with reset all filters button and hid more filters button
 $("#moreFiltersButton").click(function() {
 	$(".resetFiltersRow").show();
