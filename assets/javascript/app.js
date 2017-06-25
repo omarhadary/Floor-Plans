@@ -79,8 +79,8 @@ $("#moreFiltersButton").click(function() {
 });
 // add more amenities
 $("#moreAmenitiesButton").click(function() {
-		$("#leftAmenitieslist").append("<li>swimming pool</li><li>wireless internet</li><li>Hot Coffee</li><li>Security System</li>");
-		$("#rightAmenitiesList").append("<li>Fireplace</li><li>Cable Television</li><li>Climate Controlled</li><li>Tennis Courts</li>");
+		$("#leftAmenitieslist").append("<div class='checkbox'><label><input type='checkbox' value=''>SWIMMING POOL</label></div><div class='checkbox'><label><input type='checkbox' value=''>WIRELESS INTERNET</label></div><div class='checkbox'><label><input type='checkbox' value=''>HOT COFFEE</label></div><div class='checkbox'><label><input type='checkbox' value=''>SECURITY SYSTEM</label></div>");
+		$("#rightAmenitiesList").append("<div class='checkbox'><label><input type='checkbox' value=''>FIREPLACE</label></div><div class='checkbox'><label><input type='checkbox' value=''>CABLE TELEVISION</label></div><div class='checkbox'><label><input type='checkbox' value=''>CLIMATE CONTROLLED</label></div><div class='checkbox'><label><input type='checkbox' value=''>TENNIS COURTS</label></div>");
 		$("#moreAmenitiesButton").replaceWith("<div class='col-md-6 col-md-offset-6' role='button'>Less</div>");
 	})
 	// function to use bedroom count onclick

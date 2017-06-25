@@ -12,10 +12,10 @@
 	<title>Floor Plans</title>
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row resultsSection">
 			<!--where images of floor plans will populate-->
-			<div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 floorPlans"></div>
+			<div class="floorPlans img-responsive"></div>
 		</div>
 		<div aria-multiselectable="true" class="row filtersSection" id="accordion">
 			<div class="row resetFiltersRow">
@@ -33,14 +33,14 @@
 				<div class="col-md-3">
 					Rent
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-4">
 					Move In Date
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-2">
 					<a aria-controls="collapseOne" aria-expanded="false" data-toggle="collapse" href="#collapseOne" id="moreFiltersButton" role="button">More Filters</a>
 				</div>
 			</div>
-			<div class="row moreFiltersRow collapse" id="collapseOne">
+			<div class="moreFiltersRow collapse" id="collapseOne">
 				<div class="row moreFiltersSelectionRow">
 					<div class="col-md-3">
 						Bathrooms
@@ -48,22 +48,26 @@
 					<div class="col-md-3">
 						SQFT
 					</div>
-					<div class="col-md-3">
-						<div class="row">
+					<div class="col-md-4">
+						<div>
 							Amenities
 						</div>
 						<div class="row listOfAmenities">
-							<div class="col-md-6">
-								<ul id="leftAmenitieslist">
-									<li>air conditioning</li>
-									<li>assigned parking</li>
-								</ul>
+							<div class="col-md-6" id="leftAmenitieslist">
+								<div class="checkbox disabled">
+									<label><input disabled type="checkbox" value="">AIR CONDITIONING</label>
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox" value="">ASSIGNED PARKING</label>
+								</div>
 							</div>
-							<div class="col-md-6">
-								<ul id="rightAmenitiesList">
-									<li>balcony</li>
-									<li>parking</li>
-								</ul>
+							<div class="col-md-6" id="rightAmenitiesList">
+								<div class="checkbox disabled">
+									<label><input disabled type="checkbox" value="">BALCONY</label>
+								</div>
+								<div class="checkbox">
+									<label><input type="checkbox" value="">CARPET</label>
+								</div>
 							</div>
 						</div>
 						<div class="row moreAmenitiesRow">
