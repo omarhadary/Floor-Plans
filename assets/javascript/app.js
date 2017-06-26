@@ -1,4 +1,5 @@
-var floorPlanImagesArray = [{
+$(function() {
+    var floorPlanImagesArray = [{
 	name: "casaNova",
 	imgURL: "assets/img/casaNova.jpg",
 	bedroomCount: 0,
@@ -59,9 +60,7 @@ var floorPlanImagesArray = [{
 	bedroomCount: 0,
 	rentAmount: 525
 }];
-// onload
-$(function() {
-	// hide the reset all filters row
+// onload hide the reset all filters row
 	$(".resetFiltersRow").hide();
 	// clear rental results 
 	$(".floorPlans").empty();
@@ -71,22 +70,29 @@ $(function() {
 		floorPlanImage.attr('src', floorPlanImagesArray[i].imgURL);
 		$(".floorPlans").append(floorPlanImage);
 	}
-});
+
+// when reset all button is clicked, reload the page
+
+$(".resetAllButton").click(function() {
+      location.reload();
+    });
+
 // display filtered rentals by bedroom count
-    // $('button:button').click(function() {
-    // var bedroomSelection = null;
-    // bedroomSelection = $(this).val();
-    // console.log(bedroomSelection);
-$("button.applyFiltersButton").click(function() {
     var bedroomSelection;
-    bedroomSelection = $('.bedroomSelectionButtons').val();
-    console.log(bedroomSelection);
-    // for(var i=0; i <floorPlanImagesArray.length; i++) {
-    //     if (bedroomSelection == floorPlanImagesArray[i].bedroomCount) {
-    //         console.log(floorPlanImagesArray[i].name);
-    //     }
-    //     return;
-    // }
+$("button.applyFiltersButton").click(function() {
+        $('button:button').click(function() {
+        bedroomSelection = $(this).push();
+        });
+        console.log(bedroomSelection);
+    // var bedroomSelection = null;
+    // bedroomSelection = $('.bedroomSelectionButtons').val();
+    // console.log(bedroomSelection);
+    for(var i=0; i <floorPlanImagesArray.length; i++) {
+        if (bedroomSelection == floorPlanImagesArray[i].bedroomCount) {
+            console.log(floorPlanImagesArray[i].name);
+        }
+        return;
+    }
     
     // var bedroomSelection = $(".bedroomSelectionButtons").attr("value");
     // $(".input-group-btn > button.btn").on("click", function(){
@@ -209,3 +215,4 @@ $("#moreAmenitiesButton").click(function() {
 	// on release, check value of the newly position bracket, clear the results in the and loop through the floorPlans images to update the results in the #floor-plan
 	// On Click More Filters, expand the filters area. On click of cancel button, go back to minimal filters area, onclick of apply button, filter the floorPlanImages by the bedroom and rent parameters already entered
 	// at mobile screen, only show a filters button and expand the filters screen once clicked
+});
