@@ -78,20 +78,35 @@ $(".resetAllButton").click(function() {
     });
 
 // display filtered rentals by bedroom count
-    var bedroomSelection;
+     $('.bedroomSelectionButtons').on("click", function() {
+        // bedroomSelection = null;
+        var bedroomSelection = $(this).val();
+        localStorage.clear();
+        localStorage.setItem("bedroomCount", bedroomSelection);
+    // console.log(bedroomSelection);    
+        return false;
+});
+
 $("button.applyFiltersButton").click(function() {
-        $('button:button').click(function() {
-        bedroomSelection = $(this).push();
-        });
-        console.log(bedroomSelection);
+       
+        
+        var bedroomsToCheck = localStorage.getItem("bedroomCount");
+        console.log(bedroomsToCheck);
+        $(".floorPlans").empty();
     // var bedroomSelection = null;
     // bedroomSelection = $('.bedroomSelectionButtons').val();
     // console.log(bedroomSelection);
     for(var i=0; i <floorPlanImagesArray.length; i++) {
-        if (bedroomSelection == floorPlanImagesArray[i].bedroomCount) {
+        if (bedroomsToCheck == floorPlanImagesArray[i].bedroomCount) {
             console.log(floorPlanImagesArray[i].name);
+	
+	// clear rental results 
+	// $(".floorPlans").empty();
+    var floorPlanImage = $('<img>');
+    floorPlanImage.attr('src', floorPlanImagesArray[i].imgURL);
+		$(".floorPlans").append(floorPlanImage);
         }
-        return;
+        
     }
     
     // var bedroomSelection = $(".bedroomSelectionButtons").attr("value");
