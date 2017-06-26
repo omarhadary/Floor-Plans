@@ -64,6 +64,7 @@ $(function() {
 	$(".resetFiltersRow").hide();
 	// clear rental results 
 	$(".floorPlans").empty();
+    localStorage.clear();
 	// add all listings on page load
 	for (var i = 0; i < floorPlanImagesArray.length; i++) {
 		var floorPlanImage = $('<img>');
@@ -79,13 +80,20 @@ $(function() {
 		var bedroomSelection = $(this).val();
 		localStorage.clear();
 		localStorage.setItem("bedroomCount", bedroomSelection);
-		return false;
+		// return false;
 	});
 	// display filtered results when Apply Filters button is clicked
 	$("button.applyFiltersButton").click(function() {
 		var bedroomsToCheck = localStorage.getItem("bedroomCount");
 		console.log(bedroomsToCheck);
 		$(".floorPlans").empty();
+        if (bedroomsToCheck == null) {
+            for (var i = 0; i < floorPlanImagesArray.length; i++) {
+		var floorPlanImage = $('<img>');
+		floorPlanImage.attr('src', floorPlanImagesArray[i].imgURL);
+		$(".floorPlans").append(floorPlanImage);
+	}
+        }
 		if (bedroomsToCheck == 3) {
 			for (var i = 0; i < floorPlanImagesArray.length; i++) {
 				if (floorPlanImagesArray[i].bedroomCount >= 3) {
@@ -103,6 +111,12 @@ $(function() {
 				}
 			}
 		}
+
+                console.log("min price is "+localStorage.getItem("minRentPrice"));
+                console.log("max price is "+localStorage.getItem("maxRentPrice"));
+
+
+
 	});
 	// rent range picker take 2 
 	// $("#slider").slider({
@@ -146,9 +160,15 @@ $(function() {
 			min: 500,
 			max: 4000,
 			values: [500, 4000],
+            step: 50,
 			slide: function(event, ui) {
-					$("#rentPrice").val("$" + ui.values[0] + " - $" + ui.values[1]);
-				}
+					$("#minRentPrice").val("$" + ui.values[0]);
+                    $("#maxRentPrice").val(" - $" + ui.values[1]);
+				},
+            stop: function (event, ui) {
+                localStorage.setItem("minRentPrice", ui.values[0]);
+                localStorage.setItem("maxRentPrice", ui.values[1]);
+            }
 				// ,
 				// create: function(event, ui) {
 				//         var minValue=$(this).slider('values',0);
@@ -156,10 +176,11 @@ $(function() {
 				//         $(this).find('.ui-slider-handle').append("$"+$( "#sliderRentAmount" ).slider( "values", 0 ));
 				//     }
 		});
-		$("#rentPrice").val("$" + $("#sliderRentAmount").slider("values", 0) + " - $" + $("#sliderRentAmount").slider("values", 1));
+		$("#minRentPrice").val("$" + $("#sliderRentAmount").slider("values", 0));
+        $("#maxRentPrice").val(" - $" + $("#sliderRentAmount").slider("values", 1));
 		// $( "#minRentPrice" ).val( "$" + $( "#sliderRentAmount" ).slider( "values", 0 ));
 	});
-	$("#minRentPrice").val("$" + $("#slider").slider("values", 0));
+	// $("#minRentPrice").val("$" + $("#slider").slider("values", 0));
 	// display min rent value below slider
 	// $('#minRentPrice').html('$' + $('#slider').slider('values', 0)).position({
 	//     my: 'center top',
@@ -192,7 +213,7 @@ $(function() {
 		});
 		$("#area").val($("#sliderSQFT").slider("values", 0) + " sq. ft - " + $("#sliderSQFT").slider("values", 1) + " sq. ft.");
 	});
-	// show row with reset all filters button and hid more filters button
+	// show row with reset all filters button and hide more filters button
 	$("#moreFiltersButton").click(function() {
 		$(".resetFiltersRow").show();
 		$("#moreFiltersButton").hide();

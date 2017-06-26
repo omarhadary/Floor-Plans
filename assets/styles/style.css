@@ -40,15 +40,13 @@ img {
   background: none;
 }
 /*changing color of rent price display*/
-#rentPrice, #area {
+#minRentPrice, #maxRentPrice, #area {
     border: 0; 
     color: #0879b2; 
     font-weight: bold;
     margin-top: 5%;
 }
-#displayRentPrice{
-    display: inline;
-}
+
 /*changing color of slider bar*/
 .ui-widget-header {
     background: #0879b2;
