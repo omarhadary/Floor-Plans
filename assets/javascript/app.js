@@ -55,7 +55,7 @@ var floorPlanImagesArray = [{
 	rentAmount: 2825
 }, {
 	name: "liliput",
-	imgURL: "assets/img/liliput.jpg",
+	imgURL: "assets/img/floor-plans-3.PNG",
 	bedroomCount: 0,
 	rentAmount: 525
 }];
@@ -73,7 +73,18 @@ $(function() {
 	}
 });
 // display filtered rentals by bedroom count
-
+var bedroomSelection;
+$("div.applyFiltersRow").on('click', 'button.applyFiltersButton', function() {
+        // var bedroomSelection = $(".bedroomSelectionButtons").attr("value");
+        // console.log(bedroomSelection);
+    $(".input-group-btn > button.btn").on("click", function(){
+        bedroomSelection = +this.value;
+    });
+    console.log("Value is " + bedroomSelection);
+});
+// $('.bedroomSelectionButtons').click(function() {
+//             console.log($(this).attr("value"));
+//         });
 // rent range pocker take 2 
 // $("#slider").slider({
 //     range: true,
