@@ -55,7 +55,7 @@ var floorPlanImagesArray = [{
 	rentAmount: 2825
 }, {
 	name: "liliput",
-	imgURL: "assets/img/floor-plans-3.PNG",
+	imgURL: "assets/img/liliput.jpg",
 	bedroomCount: 0,
 	rentAmount: 525
 }];
@@ -73,14 +73,27 @@ $(function() {
 	}
 });
 // display filtered rentals by bedroom count
-var bedroomSelection;
-$("div.applyFiltersRow").on('click', 'button.applyFiltersButton', function() {
-        // var bedroomSelection = $(".bedroomSelectionButtons").attr("value");
-        // console.log(bedroomSelection);
-    $(".input-group-btn > button.btn").on("click", function(){
-        bedroomSelection = +this.value;
-    });
-    console.log("Value is " + bedroomSelection);
+    // $('button:button').click(function() {
+    // var bedroomSelection = null;
+    // bedroomSelection = $(this).val();
+    // console.log(bedroomSelection);
+$("button.applyFiltersButton").click(function() {
+    var bedroomSelection;
+    bedroomSelection = $('.bedroomSelectionButtons').val();
+    console.log(bedroomSelection);
+    // for(var i=0; i <floorPlanImagesArray.length; i++) {
+    //     if (bedroomSelection == floorPlanImagesArray[i].bedroomCount) {
+    //         console.log(floorPlanImagesArray[i].name);
+    //     }
+    //     return;
+    // }
+    
+    // var bedroomSelection = $(".bedroomSelectionButtons").attr("value");
+    // $(".input-group-btn > button.btn").on("click", function(){
+    //     bedroomSelection = +this.innerHTML;
+    // });
+    // console.log("Value is " + bedroomSelection);
+    // });
 });
 // $('.bedroomSelectionButtons').click(function() {
 //             console.log($(this).attr("value"));

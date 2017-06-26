@@ -25,20 +25,24 @@ img {
 .filtersSection {
 	bottom: 0;
 	background-color: white;
+    border-color: #90b2e9;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    box-shadow: 50px 0 0 0 #888888;
 	position: fixed;
 	width: 100%;
 }
-#slider-3 > div {
-    /*margin-top:-25px;*/
-    position: relative;
+#moreFiltersButton {
+    color: 47a9da;
 }
+
 .slider .ui-state-default .ui-slider .ui-slider-handle {
   background: none;
 }
 /*changing color of rent price display*/
 #rentPrice, #area {
     border: 0; 
-    color: #3366CC; 
+    color: #0879b2; 
     font-weight: bold;
     margin-top: 5%;
 }
@@ -47,7 +51,7 @@ img {
 }
 /*changing color of slider bar*/
 .ui-widget-header {
-    background: #3366CC;
+    background: #0879b2;
 }
 /*changing image for slider button*/
 .ui-slider .ui-slider-handle {
