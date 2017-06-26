@@ -72,6 +72,8 @@ $(function() {
 		$(".floorPlans").append(floorPlanImage);
 	}
 });
+// display filtered rentals by bedroom count
+
 // rent range pocker take 2 
 // $("#slider").slider({
 //     range: true,
@@ -120,12 +122,13 @@ $(function() {
         values: [ 500, 4000 ],
         slide: function( event, ui ) {
         $( "#rentPrice" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-    },
-    create: function(event, ui) {
-            var minValue=$(this).slider('values',0);
-            var maxValue=$(this).slider('values',1);
-            $(this).find('.ui-slider-handle').append("$"+$( "#sliderRentAmount" ).slider( "values", 0 ));
-        }
+    }
+    // ,
+    // create: function(event, ui) {
+    //         var minValue=$(this).slider('values',0);
+    //         var maxValue=$(this).slider('values',1);
+    //         $(this).find('.ui-slider-handle').append("$"+$( "#sliderRentAmount" ).slider( "values", 0 ));
+    //     }
     });
     $( "#rentPrice" ).val( "$" + $( "#sliderRentAmount" ).slider( "values", 0 ) +
         " - $" + $( "#sliderRentAmount" ).slider( "values", 1 ) );
@@ -154,12 +157,13 @@ $(function() {
         step: 50,
         slide: function( event, ui ) {
         $( "#area" ).val(ui.values[ 0 ] + " sq. ft. - " + ui.values[ 1 ] +" sq.ft.");
-    },
-    create: function(event, ui) {
-            var minValue=$(this).slider('values',0);
-            var maxValue=$(this).slider('values',1);
-            $(this).find('.ui-slider-handle').append("$"+$( "#sliderSQFT" ).slider( "values", 0 ));
-        }
+    }
+    // ,
+    // create: function(event, ui) {
+    //         var minValue=$(this).slider('values',0);
+    //         var maxValue=$(this).slider('values',1);
+    //         $(this).find('.ui-slider-handle').append("$"+$( "#sliderSQFT" ).slider( "values", 0 ));
+    //     }
     });
     $( "#area" ).val($( "#sliderSQFT" ).slider( "values", 0 ) +
         " sq. ft - " + $( "#sliderSQFT" ).slider( "values", 1 ) +" sq. ft.");

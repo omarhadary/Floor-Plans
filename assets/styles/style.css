@@ -52,8 +52,10 @@ img {
 /*changing image for slider button*/
 .ui-slider .ui-slider-handle {
   background:url(../img/sliderButton.png) no-repeat; position: absolute; 
+  background-size: 100%;
+  border-color: white;
   color: grey;
-  width: 35px;
+  width: 40px;
   height: 35px;
   margin-left: -5px;
   top: -14px;
@@ -71,6 +73,9 @@ img {
     display: inline;
     max-width: 50%;
 }
+    .filtersSection {
+        margin-left: 8%;
+    }
 }
 
 /*laptop large*/
