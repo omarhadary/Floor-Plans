@@ -1,6 +1,7 @@
 body {
        width: 100%;
-       margin: 0%;    
+       margin: 0%;   
+       padding-bottom: 10%; 
 }
 
 /*.resultsSection, .floorPlans {
@@ -34,6 +35,11 @@ img {
 }
 #moreFiltersButton {
     color: 47a9da;
+}
+.bedroomSelectionButtons:focus,
+.bedroomSelectionButtons:active,
+.bedroomSelectionButtons.active {
+    background: olive;
 }
 
 .slider .ui-state-default .ui-slider .ui-slider-handle {
@@ -79,6 +85,14 @@ img {
         margin-left: 8%;
     }
 }
+
+/*make filters menua full screen at tablet and mobile width*/
+/*@media (max-width: 768px){ 
+   .filtersSection { 
+      height:100% !important; 
+      /*background-color:#292929;*/
+   /*} */
+/*}*/
 
 /*laptop large*/
 @media (min-width: 769px) and (max-width: 1024px) {

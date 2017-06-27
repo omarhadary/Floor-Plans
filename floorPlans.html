@@ -2,26 +2,29 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta charset="UTF-8">
-	<!--<meta content="IE=edge" http-equiv="X-UA-Compatible">-->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8"><!--<meta content="IE=edge" http-equiv="X-UA-Compatible">-->
+	<meta content="width=device-width, initial-scale=1" name="viewport">
 	<link href="assets/img/favicon.ico" rel="icon" type="image/x-icon">
 	<link href="./assets/styles/reset.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-	<link href = "https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
-    <link href="./assets/styles/style.css" rel="stylesheet">
+	<link href="https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+	<link href="./assets/styles/style.css" rel="stylesheet">
 	<title>Floor Plans</title>
 </head>
 <body>
 	<div class="container-fluid">
 		<div class="row resultsSection">
-            <!--where images of floor plans will populate-->
+			<!--where images of floor plans will populate-->
 			<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-                <div class="floorPlans img-responsive"></div>
-            </div>
+				<div class="floorPlans img-responsive"></div>
+			</div>
 		</div>
-		<div aria-multiselectable="true" class="row filtersSection" id="accordion">
-			<div class="row resetFiltersRow">
+		<div aria-multiselectable="true" class="row filtersSection">
+			<div class="row mobileFiltersButtonRow">
+                <a aria-controls="collapseOne" aria-expanded="false" class="glyphicon glyphicon-filter" data-toggle="collapse" href="#collapseOne" id="mobileFiltersButton" role="button">FILTERS</a>
+            </div>
+            <div id="largeScreenFiltersSection">
+            <div class="row resetFiltersRow">
 				<div class="col-sm-3 col-md-3 col-lg-3">
 					<h4>Filters</h4>
 				</div>
@@ -31,70 +34,55 @@
 			</div>
 			<div class="row landingPageFiltersRow">
 				<div class="col-sm-3 col-md-3 col-lg-3">
-                    <label><span class="glyphicon glyphicon-bed"></span> BEDROOMS</label>
-                        <!--<div class="btn-group">-->
-                        </br>
-                            <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-default bedroomSelectionButtons" value=0>STUDIO</button>
-                                <button type="button" class="btn btn-default bedroomSelectionButtons" value=1>1</button>
-                                <button type="button" class="btn btn-default bedroomSelectionButtons" value=2>2</button>
-                                <button type="button" class="btn btn-default bedroomSelectionButtons" value=3>3+</button>
-                            </div>
-                        <!--</div>-->
+					<label><span class="glyphicon glyphicon-bed"></span> BEDROOMS</label> <!--<div class="btn-group">-->
+					<br>
+					<div class="btn-group" role="group">
+						<button class="btn btn-default bedroomSelectionButtons" type="button" value="0">STUDIO</button> <button class="btn btn-default bedroomSelectionButtons" type="button" value="1">1</button> <button class="btn btn-default bedroomSelectionButtons" type="button" value="2">2</button> <button class="btn btn-default bedroomSelectionButtons" type="button" value="3">3+</button>
+					</div><!--</div>-->
 				</div>
-            
 				<div class="col-sm-2 col-md-2 col-lg-2">
-                    <p>
-                        <label><span class="glyphicon glyphicon-bed"></span> RENT</label>
-                    </p>
-                    <div id = "sliderRentAmount"></div>
-                    <div><input type = "text" id = "minRentPrice"><input type = "text" id = "maxRentPrice"></div>
-                    <!--<p>
+					<p><label><span class="glyphicon glyphicon-bed"></span> RENT</label></p>
+					<div id="sliderRentAmount"></div>
+					<div>
+						<input id="minRentPrice" type="text"><input id="maxRentPrice" type="text">
+					</div><!--<p>
                         <label for = "minRentPrice">Min</label>
                         <input type = "text" id = "minRentPrice" 
                         style = "border:0; color:#b9cd6d; font-weight:bold;">
                     </p>-->
-                    <!--<div id="maxRentPrice"></div>-->
+					<!--<div id="maxRentPrice"></div>-->
 				</div>
-                <div class="col-sm-1 col-md-1 col-lg-1"></div>
+				<div class="col-sm-1 col-md-1 col-lg-1"></div>
 				<div class="col-sm-2 col-md-2 col-lg-2">
 					<label><span class="glyphicon glyphicon-calendar"></span> MOVE IN DATE</label>
-                    <div class="form-group">
-                        <div class='input-group date' id="datepicker">
-                            <input type='text' placeholder="Any Timeframe" class="form-control"/>
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-triangle-bottom"></span>
-                            </span>
-                        </div>
-                    </div>
+					<div class="form-group">
+						<div class='input-group date' id="datepicker">
+							<input class="form-control" placeholder="Any Timeframe" type='text'> <span class="input-group-addon"><span class="glyphicon glyphicon-triangle-bottom"></span></span>
+						</div>
+					</div>
 				</div>
 				<div class="col-sm-2 col-md-2 col-lg-2">
-					<a aria-controls="collapseOne" aria-expanded="false" data-toggle="collapse" href="#collapseOne" id="moreFiltersButton" class="glyphicon glyphicon-filter" role="button"> MORE FILTERS</a>
+					<a aria-controls="collapseOne" aria-expanded="false" class="glyphicon glyphicon-filter" data-toggle="collapse" href="#collapseOne" id="moreFiltersButton" role="button">MORE FILTERS</a>
 				</div>
 			</div>
 			<div class="moreFiltersRow collapse" id="collapseOne">
 				<div class="row moreFiltersSelectionRow">
 					<div class="col-sm-3 col-md-3 col-lg-3">
-                    <label><span class="glyphicon glyphicon-bed"></span> BATHROOMS</label>
-                        <!--<div class="input-group">-->
-                            </br>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default">ANY</button>
-                                <button type="button" class="btn btn-default">1+</button>
-                                <button type="button" class="btn btn-default">2+</button>
-                                <button type="button" class="btn btn-default">3+</button>
-                            </div>
-                        <!--</div>-->
+						<label><span class="glyphicon glyphicon-bed"></span> BATHROOMS</label> <!--<div class="input-group">-->
+						<br>
+						<div class="btn-group">
+							<button class="btn btn-default" type="button">ANY</button> <button class="btn btn-default" type="button">1+</button> <button class="btn btn-default" type="button">2+</button> <button class="btn btn-default" type="button">3+</button>
+						</div><!--</div>-->
 					</div>
-				<div class="col-sm-2 col-md-2 col-lg-2">
-                    <p>
-                        <label><span class="glyphicon glyphicon-bed"></span> SQFT</label>
-                    </p>
-                    <div id = "sliderSQFT"></div>
-                    <div><input type = "text" id = "minArea"><input type = "text" id = "maxArea"></div>
-				</div>
+					<div class="col-sm-2 col-md-2 col-lg-2">
+						<p><label><span class="glyphicon glyphicon-bed"></span> SQFT</label></p>
+						<div id="sliderSQFT"></div>
+						<div>
+							<input id="minArea" type="text"><input id="maxArea" type="text">
+						</div>
+					</div>
 					<div class="col-sm-1 col-md-1 col-lg-1"></div>
-                    <div class="col-sm-4 col-md-4 col-lg-4">
+					<div class="col-sm-4 col-md-4 col-lg-4">
 						<label><span class="glyphicon glyphicon-resize-horizontal"></span> AMENITIES</label>
 						<div class="row listOfAmenities">
 							<div class="col-sm-6 col-md-6 col-lg-6" id="leftAmenitiesList">
@@ -122,22 +110,17 @@
 					</div>
 				</div>
 				<div class="row applyFiltersRow">
-					<div class="col-sm-3 col-md-3 col-lg-3"></div>
-					<button class="col-sm-3 col-md-3 col-lg-3 cancelFiltersButton">
-						Cancel
-					</button>
-					<button class="col-sm-3 col-md-3 col-lg-3 applyFiltersButton">
-						Apply Filters
-					</button>
+					<div class="col-sm-3 col-md-3 col-lg-3"></div><button class="col-sm-3 col-md-3 col-lg-3 cancelFiltersButton">Cancel</button> <button class="col-sm-3 col-md-3 col-lg-3 applyFiltersButton">Apply Filters</button>
 					<div class="col-sm-3 col-md-3 col-lg-3"></div>
 				</div>
 			</div>
 		</div>
+        </div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js">
 	</script> 
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
-    </script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
+	</script> 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 	</script> 
 	<script src="./assets/javascript/app.js" type="text/javascript">
