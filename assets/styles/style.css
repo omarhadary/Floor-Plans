@@ -26,21 +26,16 @@ img {
 .filtersSection {
 	bottom: 0;
 	background-color: white;
-    border-color: #90b2e9;
+    border-color: #d0d0d0;
     border-style: solid;
-    border-width: 1px 0 0 0;
-    box-shadow: 50px 0 0 0 #888888;
-	position: fixed;
+    border-width: 2px 0 0 0;
+    position: fixed;
 	width: 100%;
 }
+
 #moreFiltersButton {
-    color: 47a9da;
+    color: #47a9da;
 }
-/*.bedroomSelectionButtons:focus,
-.bedroomSelectionButtons:active,
-.bedroomSelectionButtons.active {
-    background: #a6cae4;
-}*/
 
 .slider .ui-state-default .ui-slider .ui-slider-handle {
   background: none;
@@ -69,10 +64,69 @@ img {
   top: -14px;
   position: -200px;
 }
-/*mobile large*/
-@media (min-width: 376px) and (max-width: 425px) {
+.cancelFiltersButton, .applyFiltersButton {
+    background: none;
+    border: none;
+    padding: 2%;
+}
+.applyFiltersButton {
+    background: black;
+    color: white;
+    margin-left: 5% ;
+}
+.cancelFiltersButton {
+    margin-right: 5%
+}
+/*mobile*/
+@media (min-width: 320px) and (max-width: 425px) {
 	img {
     padding-left: 5%;
+}
+
+.resetFiltersRow{
+    border-color: #d0d0d0;
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    padding: 1% 5% 1% 5%;
+}
+.resetAllButton{
+    color: #47a9da;
+    margin-left: 50%;
+    padding-top: 3%;
+}
+    .filtersSection {
+	bottom: 0;
+	background-color: white;
+    border-color: #d0d0d0;
+    border-style: solid;
+    border-width: 2px 0 0 0;
+    position: fixed;
+	width: 100%;
+}
+.landingPageFiltersRow,.moreFiltersSelectionRow, .applyFiltersRow {
+    padding: 0% 13% 0% 5%;
+}
+.landingPageFiltersRow {
+    padding-top: 5%;
+}
+.mobileFiltersButtonRow{
+    padding: 3%;
+    text-align: center;
+}
+.applyFiltersRow {
+    padding-bottom: 5%;
+}
+#mobileFiltersButton{
+    color: black;
+}
+.sliderRentAmountColumn, .moveInDateColumn, .SQFTColumn, .amenitiesColumn {
+    padding-top: 5%;
+}
+
+.applyFiltersRow {
+    /*padding-left: 40%;*/
+    margin-left: 13%;
+    text-align: center;
 }
 }
 /*tablet*/
@@ -86,13 +140,10 @@ img {
     }
 }
 
-/*make filters menua full screen at tablet and mobile width*/
-/*@media (max-width: 768px){ 
-   .filtersSection { 
-      height:100% !important; 
-      /*background-color:#292929;*/
-   /*} */
-/*}*/
+/*make filters menu full screen at tablet and mobile width*/
+@media (max-width: 768px){ 
+
+}
 
 /*laptop large*/
 @media (min-width: 769px) and (max-width: 1024px) {

@@ -76,12 +76,11 @@ $(function() {
 	$(".cancelFiltersButton").click(function() {
 		location.reload();
 	});
-
-    // capture bedroom count input and store in localStorage
+	// capture bedroom count input and store in localStorage
 	$('.bedroomSelectionButtons').on("click", function() {
-		$(".bedroomSelectionButtons.btn-primary").removeClass("btn-primary")
+		$(".bedroomSelectionButtons.btn-primary").removeClass("btn-primary");
         $(this).toggleClass("btn-primary");
-        var bedroomSelection = $(this).val();
+		var bedroomSelection = $(this).val();
 		localStorage.removeItem("bedroomCount");
 		localStorage.setItem("bedroomCount", bedroomSelection);
 		return false;
@@ -136,21 +135,21 @@ $(function() {
 			}
 		}
 		// if statement to filter by bedrooms >= 3
-		if (bedroomsToCheck == 3 && minRentToCheck !== null && maxRentToCheck !== null) {
-			console.log("rent value are not null");
-			console.log("min rent is " + minRentToCheck);
-			console.log("max rent is " + maxRentToCheck);
-			for (var i = 0; i < floorPlanImagesArray.length; i++) {
-				if (floorPlanImagesArray[i].bedroomCount >= 3 && minRentToCheck <= floorPlanImagesArray[i].rentAmount <= maxRentToCheck) {
-					var floorPlanImage = $('<img>');
-					floorPlanImage.attr('src', floorPlanImagesArray[i].imgURL);
-					floorPlanImage.attr('data-type', floorPlanImagesArray[i].rentAmount);
-					$(".floorPlans").append(floorPlanImage);
-					console.log(floorPlanImagesArray[i].rentAmount);
-				}
-			}
-            return;
-		}
+		// if (bedroomsToCheck == 3 && minRentToCheck !== null && maxRentToCheck !== null) {
+		// 	console.log("rent value are not null");
+		// 	console.log("min rent is " + minRentToCheck);
+		// 	console.log("max rent is " + maxRentToCheck);
+		// 	for (var i = 0; i < floorPlanImagesArray.length; i++) {
+		// 		if (floorPlanImagesArray[i].bedroomCount >= 3 && minRentToCheck <= floorPlanImagesArray[i].rentAmount <= maxRentToCheck) {
+		// 			var floorPlanImage = $('<img>');
+		// 			floorPlanImage.attr('src', floorPlanImagesArray[i].imgURL);
+		// 			floorPlanImage.attr('data-type', floorPlanImagesArray[i].rentAmount);
+		// 			$(".floorPlans").append(floorPlanImage);
+		// 			console.log(floorPlanImagesArray[i].rentAmount);
+		// 		}
+		// 	}
+		// 	return;
+		// }
 		// if statement to filter if bedroom count is not selected
 		if (bedroomsToCheck == null && minRentToCheck !== null && maxRentToCheck !== null) {
 			for (var i = 0; i < floorPlanImagesArray.length; i++) {
@@ -219,6 +218,9 @@ $(function() {
 				}
 			}
 		}
+        if( $('.floorPlans:empty').length ) {
+            $(".floorPlans").append("<h4>No matching results.</br>Try changing your search criteria.</h4>");
+        }
 	});
 	// rent range picker take 2 
 	// $("#slider").slider({
@@ -257,40 +259,55 @@ $(function() {
 	// rent range slider
 	$(function() {
 		// var uiHandle;
-        $('.ui-slider .ui-slider-handle').prepend('<img id="sliderButton" src="../img/sliderButton.jpg" />')
+		$('.ui-slider .ui-slider-handle').prepend('<img id="sliderButton" src="../img/sliderButton.jpg" />')
 		$("#sliderRentAmount").slider({
 			range: true,
 			min: 500,
 			max: 4000,
 			values: [500, 4000],
 			step: 25,
-			slide: function(event, ui) {
-                $(ui.handle).text("$"+ui.value);
-                $(ui.handle).css({'text-align':'center', 'padding-top': '18%','font-size':'70%'});
-				// $("#minRentPrice").val("$" + ui.values[0]);
-				// $("#maxRentPrice").val(" - $" + ui.values[1]);
-				localStorage.setItem("minRentPrice", ui.values[0]);
+            slide: function(event, ui) {
+				
+				if ($(window).width() <= 425) {
+                    $(ui.handle).text("$" + ui.value);
+					$(ui.handle).css({
+						'text-align': 'center',
+						'padding-top': '8%',
+						'font-size': '70%'
+					});
+                    localStorage.setItem("minRentPrice", ui.values[0]);
 				localStorage.setItem("maxRentPrice", ui.values[1]);
-                // uiHandle = ui-slider-handle;
+				}
+				if ($(window).width() > 425) {
+                    $(ui.handle).text("$" + ui.value);
+					$(ui.handle).css({
+						'text-align': 'center',
+						'padding-top': '18%',
+						'font-size': '70%'
+					});
+                    localStorage.setItem("minRentPrice", ui.values[0]);
+				localStorage.setItem("maxRentPrice", ui.values[1]);
+				}
 			},
-            // reset: $(".resetAllButton").click(function() {
-            //     $('.ui-slider .ui-slider-handle').prepend('<img id="sliderButton" src="../img/sliderButton.jpg" />')
-            // })
-				// ,
-				// create: function(event, ui) {
-				//         var minValue=$(this).slider('values',0);
-				//         var maxValue=$(this).slider('values',1);
-				//         $(this).find('.ui-slider-handle').append("$"+$( "#sliderRentAmount" ).slider( "values", 0 ));
-				//     }
+
+			// reset: $(".resetAllButton").click(function() {
+			//     $('.ui-slider .ui-slider-handle').prepend('<img id="sliderButton" src="../img/sliderButton.jpg" />')
+			// })
+			// ,
+			// create: function(event, ui) {
+			//         var minValue=$(this).slider('values',0);
+			//         var maxValue=$(this).slider('values',1);
+			//         $(this).find('.ui-slider-handle').append("$"+$( "#sliderRentAmount" ).slider( "values", 0 ));
+			//     }
 		});
-        // clear values displaying on slide handle when reset all button is clicked
-        $(".resetAllButton").click(function() {
-                $('.ui-slider .ui-slider-handle').text('')
-            })
-        // $(uiHandle).text("$"+$("#sliderRentAmount").slider("values", 0));
-        // $("#minRentPrice").val("xcx$" + $("#sliderRentAmount").slider("values", 0));
-		// $("#maxRentPrice").val(" - $" + $("#sliderRentAmount").slider("values", 1));
-		// $( "#minRentPrice" ).val( "$" + $( "#sliderRentAmount" ).slider( "values", 0 ));
+		// clear values displaying on slide handle when reset all button is clicked
+		$(".resetAllButton").click(function() {
+				$('.ui-slider .ui-slider-handle').text('')
+			})
+			// $(uiHandle).text("$"+$("#sliderRentAmount").slider("values", 0));
+			// $("#minRentPrice").val("xcx$" + $("#sliderRentAmount").slider("values", 0));
+			// $("#maxRentPrice").val(" - $" + $("#sliderRentAmount").slider("values", 1));
+			// $( "#minRentPrice" ).val( "$" + $( "#sliderRentAmount" ).slider( "values", 0 ));
 	});
 	// $("#minRentPrice").val("$" + $("#slider").slider("values", 0));
 	// display min rent value below slider
@@ -304,12 +321,10 @@ $(function() {
 	// $(function() {
 	//     $("#datepicker").datepicker();
 	// });
-    // toggle classes to show which bathroom count is selected
-
-    	$('.bathroomSelectionButtons').on("click", function() {
+	// toggle classes to show which bathroom count is selected
+	$('.bathroomSelectionButtons').on("click", function() {
 		$(".bathroomSelectionButtons.btn-primary").removeClass("btn-primary")
-        $(this).toggleClass("btn-primary");
-        
+		$(this).toggleClass("btn-primary");
 	});
 	// area range slider
 	$(function() {
@@ -322,27 +337,40 @@ $(function() {
 			step: 25,
 			slide: function(event, ui) {
 				$("ui.handle").text(ui.value + "sq.ft.");
-				$(ui.handle).css({'text-align':'center', 'padding-top': '18%','font-size':'70%'});
+				if ($(window).width() <= 425) {
+					$(ui.handle).css({
+						'text-align': 'center',
+						'padding-top': '8%',
+						'font-size': '70%'
+					});
+				}
+				if ($(window).width() > 425) {
+					$(ui.handle).css({
+						'text-align': 'center',
+						'padding-top': '18%',
+						'font-size': '70%'
+					});
+				}
 			},
-			
-				// ,
-				// create: function(event, ui) {
-				//         var minValue=$(this).slider('values',0);
-				//         var maxValue=$(this).slider('values',1);
-				//         $(this).find('.ui-slider-handle').append("$"+$( "#sliderSQFT" ).slider( "values", 0 ));
-				//     }
+			// ,
+			// create: function(event, ui) {
+			//         var minValue=$(this).slider('values',0);
+			//         var maxValue=$(this).slider('values',1);
+			//         $(this).find('.ui-slider-handle').append("$"+$( "#sliderSQFT" ).slider( "values", 0 ));
+			//     }
 		});
 		$(".resetAllButton").click(function() {
-                $('.ui-slider .ui-slider-handle').text('')
-            })
+			$('.ui-slider .ui-slider-handle').text('')
+		})
 	});
 	// clear all selected filters when reset all button is clicked
 	$(".resetAllButton").click(function() {
 		localStorage.clear();
 		$("#sliderRentAmount").slider("option", "values", [500, 4000]);
-// $("#sliderRentAmount").slider((ui.handle).text());
+		// $("#sliderRentAmount").slider((ui.handle).text());
 		$("#sliderSQFT").slider("option", "values", [800, 8000]);
-		
+        $(".bedroomSelectionButtons.btn-primary").removeClass("btn-primary");
+        $(".bathroomSelectionButtons.btn-primary").removeClass("btn-primary");
 	});
 	// show row with reset all filters button and hide more filters button
 	$("#moreFiltersButton").click(function() {
@@ -351,7 +379,7 @@ $(function() {
 		$("#moreFiltersButton").hide();
 	});
 	// add more amenities
-	$("#moreAmenitiesButton").click(function() {
+	$("#moreAmenitiesButton").click(function moreAmenitiesPopulate() {
 		$("#leftAmenitiesList").append("<div class='checkbox'><label><input type='checkbox' value=''>SWIMMING POOL</label></div><div class='checkbox'><label><input type='checkbox' value=''>WIRELESS INTERNET</label></div><div class='checkbox'><label><input type='checkbox' value=''>HOT COFFEE</label></div><div class='checkbox'><label><input type='checkbox' value=''>SECURITY SYSTEM</label></div>");
 		$("#rightAmenitiesList").append("<div class='checkbox'><label><input type='checkbox' value=''>FIREPLACE</label></div><div class='checkbox'><label><input type='checkbox' value=''>CABLE TELEVISION</label></div><div class='checkbox'><label><input type='checkbox' value=''>CLIMATE CONTROLLED</label></div><div class='checkbox'><label><input type='checkbox' value=''>TENNIS COURTS</label></div>");
 		$("#moreAmenitiesButton").replaceWith("<div class='col-md-6 col-md-offset-6' role='button'>Less</div>");
@@ -359,16 +387,21 @@ $(function() {
 	// sections to show/hide at mobile width
 	if ($(window).width() <= 425) {
 		// alert("less than 768");
+        
 		$(".mobileFiltersButtonRow").show();
 		$(".landingPageFiltersRow").hide();
-        // hide large screen filters section when filters are applied
-        $(".applyFiltersButton").click(function() {
-		$(".filtersSection").css("height", "18px");
-        console.log("SDSDFGSFG clicked");
-        $(".landingPageFiltersRow").hide();
-        $(".mobileFiltersButtonRow").show();
-	});
-    // $(".mobileFiltersButtonRow").show();
+		// hide large screen filters section when filters are applied
+		$("#mobileFiltersButton").click(function() {
+			$(".resetFiltersRow").show();
+            $(".mobileFiltersButtonRow").hide();
+		});
+		$(".applyFiltersButton").click(function() {
+			$(".mobileFiltersButtonRow").show();
+			$(".filtersSection").css("height", "45px");
+			console.log("SDSDFGSFG clicked");
+			$(".landingPageFiltersRow").hide();
+		});
+		// $(".mobileFiltersButtonRow").show();
 		// $(".largeScreenFiltersSection").hide();
 		// $("#accordion").hide();
 	}
@@ -379,11 +412,16 @@ $(function() {
 	}
 	// make filters section full screen on mobile width when mobile filters button is clicked
 	$("#mobileFiltersButton").click(function() {
-        // $("#mobileFiltersButton").hide();
-        $(".landingPageFiltersRow").show();
-        $(".moreFiltersRow").show();
-        $("#moreFiltersButton").hide();
-		$(".filtersSection").css("height", $(window).height());
+		// $("#mobileFiltersButton").hide();
+		// moreAmenitiesPopulate();
+		$(".landingPageFiltersRow").show();
+		$(".moreFiltersRow").show();
+		$("#moreFiltersButton").hide();
+		$(".filtersSection").css({
+			"height": $(window).height(),
+			"overflow-y": "scroll",
+			"-webkit-overflow-scrolling": "touch"
+		});
 	});
 	// function to use bedroom count onclick
 	//      on release of bedroom count button, clear the #floor-plans, loop through the floorPlansImages and only push the results matching
