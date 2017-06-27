@@ -146,6 +146,7 @@ $(function() {
 					console.log(floorPlanImagesArray[i].rentAmount);
 				}
 			}
+            return;
 		}
 		// if statement to filter if bedroom count is not selected
 		if (bedroomsToCheck == null && minRentToCheck !== null && maxRentToCheck !== null) {
