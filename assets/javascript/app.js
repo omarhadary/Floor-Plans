@@ -102,61 +102,62 @@ $(function() {
 		// 	}
 		// }
         //  {
-			for (var j = 0; j < floorPlanImagesArray.length; j++) {
-                console.log("are we here");
-				if (minRentToCheck <= floorPlanImagesArray[j].rentAmount && floorPlanImagesArray[j].rentAmount <= maxRentToCheck) {
-                    console.log("how about here");
-					console.log("rent value are not null");
-					console.log("min rent after loop is " + minRentToCheck);
-					console.log("max rent after loop is " + maxRentToCheck);
-                    console.log("listing rent amount " + floorPlanImagesArray[j].rentAmount);
-					var floorPlanImage = $('<img>');
-					floorPlanImage.attr('src', floorPlanImagesArray[j].imgURL);
-					// floorPlanImage.attr('data-type', floorPlanImagesArray[j].rentAmount);
-					$(".floorPlans").append(floorPlanImage);
-				}
-            
-			}
+
+            // cvcvcv working code block for rent amount cvcvcvcv
+			// for (var j = 0; j < floorPlanImagesArray.length; j++) {
+            //     console.log("are we here");
+			// 	if (bedroomsToCheck == floorPlanImagesArray[j].bedroomCount && minRentToCheck <= floorPlanImagesArray[j].rentAmount && floorPlanImagesArray[j].rentAmount <= maxRentToCheck) {
+            //         console.log("how about here");
+			// 		console.log("rent value are not null");
+			// 		console.log("min rent after loop is " + minRentToCheck);
+			// 		console.log("max rent after loop is " + maxRentToCheck);
+            //         console.log("listing rent amount " + floorPlanImagesArray[j].rentAmount);
+			// 		var floorPlanImage = $('<img>');
+			// 		floorPlanImage.attr('src', floorPlanImagesArray[j].imgURL);
+			// 		// floorPlanImage.attr('data-type', floorPlanImagesArray[j].rentAmount);
+			// 		$(".floorPlans").append(floorPlanImage);
+			// 	}
+			// }
 		// }
 
 // XZXZX good code block ZXZXZX
 
-		// if (bedroomsToCheck == null && minRentToCheck == null && maxRentToCheck == null) {
-		// 	console.log("rent values are null");
-		// 	for (var i = 0; i < floorPlanImagesArray.length; i++) {
-		// 		var floorPlanImage = $('<img>');
-		// 		floorPlanImage.attr('src', floorPlanImagesArray[i].imgURL);
-		// 		$(".floorPlans").append(floorPlanImage);
-		// 	}
-		// }
-		// if (bedroomsToCheck == 3 && minRentToCheck !== null && maxRentToCheck !== null) {
-		// 	console.log("rent value are not null");
-		// 	console.log("min rent is " + minRentToCheck);
-		// 	console.log("max rent is " + maxRentToCheck);
-		// 	for (var i = 0; i < floorPlanImagesArray.length; i++) {
-		// 		if (floorPlanImagesArray[i].bedroomCount >= 3 && minRentToCheck <= floorPlanImagesArray[i].rentAmount <= maxRentToCheck) {
-		// 			var floorPlanImage = $('<img>');
-		// 			floorPlanImage.attr('src', floorPlanImagesArray[i].imgURL);
-		// 			floorPlanImage.attr('data-type', floorPlanImagesArray[i].rentAmount);
-		// 			$(".floorPlans").append(floorPlanImage);
-		// 			console.log(floorPlanImagesArray[i].rentAmount);
-		// 		}
-		// 	}
-		// } else {
-		// 	for (var i = 0; i < floorPlanImagesArray.length; i++) {
-		// 		if (bedroomsToCheck == floorPlanImagesArray[i].bedroomCount && minRentToCheck <= floorPlanImagesArray[i].rentAmount <= maxRentToCheck) {
-		// 			console.log("rent value are not null");
-		// 			console.log("min rent is " + minRentToCheck);
-		// 			console.log("max rent is " + maxRentToCheck);
-		// 			var floorPlanImage = $('<img>');
-		// 			floorPlanImage.attr('src', floorPlanImagesArray[i].imgURL);
-		// 			floorPlanImage.attr('data-type', floorPlanImagesArray[i].rentAmount);
-		// 			floorPlanImage.attr('src', floorPlanImagesArray[i].imgURL);
-		// 			$(".floorPlans").append(floorPlanImage);
-		// 			console.log(floorPlanImage);
-		// 		}
-		// 	}
-		// }
+		if (bedroomsToCheck == null && minRentToCheck == null && maxRentToCheck == null) {
+			console.log("rent values are null");
+			for (var i = 0; i < floorPlanImagesArray.length; i++) {
+				var floorPlanImage = $('<img>');
+				floorPlanImage.attr('src', floorPlanImagesArray[i].imgURL);
+				$(".floorPlans").append(floorPlanImage);
+			}
+		}
+		if (bedroomsToCheck == 3 && minRentToCheck !== null && maxRentToCheck !== null) {
+			console.log("rent value are not null");
+			console.log("min rent is " + minRentToCheck);
+			console.log("max rent is " + maxRentToCheck);
+			for (var i = 0; i < floorPlanImagesArray.length; i++) {
+				if (floorPlanImagesArray[i].bedroomCount >= 3 && minRentToCheck <= floorPlanImagesArray[i].rentAmount <= maxRentToCheck) {
+					var floorPlanImage = $('<img>');
+					floorPlanImage.attr('src', floorPlanImagesArray[i].imgURL);
+					floorPlanImage.attr('data-type', floorPlanImagesArray[i].rentAmount);
+					$(".floorPlans").append(floorPlanImage);
+					console.log(floorPlanImagesArray[i].rentAmount);
+				}
+			}
+		} else {
+			for (var i = 0; i < floorPlanImagesArray.length; i++) {
+				if (bedroomsToCheck == floorPlanImagesArray[i].bedroomCount && minRentToCheck <= floorPlanImagesArray[i].rentAmount && floorPlanImagesArray[i].rentAmount <= maxRentToCheck) {
+					console.log("rent value are not null");
+					console.log("min rent is " + minRentToCheck);
+					console.log("max rent is " + maxRentToCheck);
+					var floorPlanImage = $('<img>');
+					floorPlanImage.attr('src', floorPlanImagesArray[i].imgURL);
+					floorPlanImage.attr('data-type', floorPlanImagesArray[i].rentAmount);
+					floorPlanImage.attr('src', floorPlanImagesArray[i].imgURL);
+					$(".floorPlans").append(floorPlanImage);
+					console.log(floorPlanImage);
+				}
+			}
+		}
 	});
 	// rent range picker take 2 
 	// $("#slider").slider({
