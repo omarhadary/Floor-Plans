@@ -26,13 +26,33 @@ img {
 .filtersSection {
 	bottom: 0;
 	background-color: white;
-    border-color: #d0d0d0;
+    border-color: #47a9da;
     border-style: solid;
     border-width: 2px 0 0 0;
     position: fixed;
 	width: 100%;
 }
-
+.landingPageFiltersRow,.moreFiltersSelectionRow, .applyFiltersRow {
+    padding: 0% 0% 0% 15%;
+}
+.landingPageFiltersRow {
+    padding-top: 1%;
+}
+.resetFiltersRow{
+    border-color: #d0d0d0;
+    border-style: solid;
+    border-width: 0 0 2px 0;
+    padding: .5% 0% .5% 15%;
+}
+.filtersTitle {
+    margin-left: -1%;
+    padding-top: .5%
+}
+.resetAllButton{
+    color: #47a9da;
+    margin-left: 50%;
+    padding-top: 1%
+}
 #moreFiltersButton {
     color: #47a9da;
 }
@@ -64,10 +84,18 @@ img {
   top: -14px;
   position: -200px;
 }
+#moreAmenitiesButton, #lessAmenitiesButton{
+    color: #47a9da;
+}
+.applyFiltersRow {
+    /*padding-left: 40%;*/
+    margin-left: -20%;
+    text-align: center;
+}
 .cancelFiltersButton, .applyFiltersButton {
     background: none;
     border: none;
-    padding: 2%;
+    padding: 1%;
 }
 .applyFiltersButton {
     background: black;
@@ -115,6 +143,9 @@ img {
 }
 .applyFiltersRow {
     padding-bottom: 5%;
+}
+.cancelFiltersButton, .applyFiltersButton {
+    padding: 2%;
 }
 #mobileFiltersButton{
     color: black;

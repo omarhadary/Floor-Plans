@@ -382,7 +382,7 @@ $(function() {
 	$("#moreAmenitiesButton").click(function moreAmenitiesPopulate() {
 		$("#leftAmenitiesList").append("<div class='checkbox'><label><input type='checkbox' value=''>SWIMMING POOL</label></div><div class='checkbox'><label><input type='checkbox' value=''>WIRELESS INTERNET</label></div><div class='checkbox'><label><input type='checkbox' value=''>HOT COFFEE</label></div><div class='checkbox'><label><input type='checkbox' value=''>SECURITY SYSTEM</label></div>");
 		$("#rightAmenitiesList").append("<div class='checkbox'><label><input type='checkbox' value=''>FIREPLACE</label></div><div class='checkbox'><label><input type='checkbox' value=''>CABLE TELEVISION</label></div><div class='checkbox'><label><input type='checkbox' value=''>CLIMATE CONTROLLED</label></div><div class='checkbox'><label><input type='checkbox' value=''>TENNIS COURTS</label></div>");
-		$("#moreAmenitiesButton").replaceWith("<div class='col-md-6 col-md-offset-6' role='button'>Less</div>");
+		$("#moreAmenitiesButton").replaceWith("<div class='col-md-6 col-md-offset-6' id='lessAmenitiesButton' role='button'<label><span class='glyphicon glyphicon-chevron-up'></span> LESS</label></div>");
 	});
 	// sections to show/hide at mobile width
 	if ($(window).width() <= 425) {
@@ -408,6 +408,7 @@ $(function() {
 	if ($(window).width() > 425) {
 		// alert("more than 768");
 		$(".mobileFiltersButtonRow").hide();
+        
 		// $(".largeScreenFiltersSection").show();
 	}
 	// make filters section full screen on mobile width when mobile filters button is clicked
