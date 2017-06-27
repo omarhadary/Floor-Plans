@@ -76,9 +76,12 @@ $(function() {
 	$(".cancelFiltersButton").click(function() {
 		location.reload();
 	});
-	// capture bedroom count input and store in localStorage
+
+    // capture bedroom count input and store in localStorage
 	$('.bedroomSelectionButtons').on("click", function() {
-		var bedroomSelection = $(this).val();
+		$(".bedroomSelectionButtons.btn-primary").removeClass("btn-primary")
+        $(this).toggleClass("btn-primary");
+        var bedroomSelection = $(this).val();
 		localStorage.removeItem("bedroomCount");
 		localStorage.setItem("bedroomCount", bedroomSelection);
 		return false;
@@ -301,6 +304,13 @@ $(function() {
 	// $(function() {
 	//     $("#datepicker").datepicker();
 	// });
+    // toggle classes to show which bathroom count is selected
+
+    	$('.bathroomSelectionButtons').on("click", function() {
+		$(".bathroomSelectionButtons.btn-primary").removeClass("btn-primary")
+        $(this).toggleClass("btn-primary");
+        
+	});
 	// area range slider
 	$(function() {
 		// $('.ui-slider .ui-slider-handle').prepend('<img id="sliderButton" src="../img/sliderButton.jpg" />')

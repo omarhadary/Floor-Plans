@@ -36,11 +36,11 @@ img {
 #moreFiltersButton {
     color: 47a9da;
 }
-.bedroomSelectionButtons:focus,
+/*.bedroomSelectionButtons:focus,
 .bedroomSelectionButtons:active,
 .bedroomSelectionButtons.active {
-    background: olive;
-}
+    background: #a6cae4;
+}*/
 
 .slider .ui-state-default .ui-slider .ui-slider-handle {
   background: none;
