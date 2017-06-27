@@ -260,6 +260,7 @@ $(function() {
 			values: [500, 4000],
 			step: 25,
 			slide: function(event, ui) {
+                $(ui.handle).text("$"+ui.value);
 				$("#minRentPrice").val("$" + ui.values[0]);
 				$("#maxRentPrice").val(" - $" + ui.values[1]);
 				localStorage.setItem("minRentPrice", ui.values[0]);
@@ -273,7 +274,7 @@ $(function() {
 				//         $(this).find('.ui-slider-handle').append("$"+$( "#sliderRentAmount" ).slider( "values", 0 ));
 				//     }
 		});
-		$("#minRentPrice").val("$" + $("#sliderRentAmount").slider("values", 0));
+        $("#minRentPrice").val("$" + $("#sliderRentAmount").slider("values", 0));
 		$("#maxRentPrice").val(" - $" + $("#sliderRentAmount").slider("values", 1));
 		// $( "#minRentPrice" ).val( "$" + $( "#sliderRentAmount" ).slider( "values", 0 ));
 	});
