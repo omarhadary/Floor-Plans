@@ -195,7 +195,7 @@ $(function() {
 	// });
 	// rent range slider
 	$(function() {
-		$('.ui-slider .ui-slider-handle').prepend('<img id="sliderButton" src="../img/sliderButton.png" />')
+		$('.ui-slider .ui-slider-handle').prepend('<img id="sliderButton" src="../img/sliderButton.jpg" />')
 		$("#sliderRentAmount").slider({
 			range: true,
 			min: 500,
@@ -235,7 +235,7 @@ $(function() {
 	// });
 	// area range slider
 	$(function() {
-		// $('.ui-slider .ui-slider-handle').prepend('<img id="sliderButton" src="../img/sliderButton.png" />')
+		// $('.ui-slider .ui-slider-handle').prepend('<img id="sliderButton" src="../img/sliderButton.jpg" />')
 		$("#sliderSQFT").slider({
 			range: true,
 			min: 800,

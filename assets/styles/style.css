@@ -53,7 +53,7 @@ img {
 }
 /*changing image for slider button*/
 .ui-slider .ui-slider-handle {
-  background:url(../img/sliderButton.png) no-repeat; position: absolute; 
+  background:url(../img/sliderButton.jpg) no-repeat; position: absolute; 
   background-size: 100%;
   border-color: white;
   color: grey;
