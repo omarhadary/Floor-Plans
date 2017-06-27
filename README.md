@@ -8,7 +8,7 @@ Floor-Plans is an interactive highfidelity mockup that allows users to filter ap
   - jQuery for selectors, DOM manipulation and event handling
   - jQuery UI for rent amount slider
 
-> Full-stack site with user input through the browser. 
+> Interactive site with user input through the browser. 
 
 ### Heroku Deployment
 
