@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta charset="UTF-8"><!--<meta content="IE=edge" http-equiv="X-UA-Compatible">-->
 	<meta content="width=device-width, initial-scale=1" name="viewport">
 	<link href="assets/img/favicon.ico" rel="icon" type="image/x-icon">
 	<link href="./assets/styles/reset.css" rel="stylesheet">
@@ -21,91 +20,87 @@
 		</div>
 		<div aria-multiselectable="true" class="row filtersSection">
 			<div class="row mobileFiltersButtonRow">
-                <a aria-controls="collapseOne" aria-expanded="false" data-toggle="collapse" href="#collapseOne" id="mobileFiltersButton" role="button"<label><span class="glyphicon glyphicon-filter"></span> FILTERS</label></a>
-            </div>
-            <div id="largeScreenFiltersSection">
-            <div class="row resetFiltersRow">
-				<div class="col-xs-2 col-sm-3 col-md-3 col-lg-3 filtersTitle">
-					<h4>Filters</h4>
-				</div>
-				<div class="col-xs-4 col-xs-offset-3 col-sm-3 col-sm-offset-3 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3 resetAllButton" role="button">
-					Reset all
-				</div>
+				<a aria-controls="collapseOne" aria-expanded="false" data-toggle="collapse" href="#collapseOne" id="mobileFiltersButton" role="button"><label><span class="glyphicon glyphicon-filter"></span> FILTERS</label></a>
 			</div>
-			<div class="row landingPageFiltersRow">
-				<div class="col-sm-3 col-md-3 col-lg-3">
-					<label><span class="glyphicon glyphicon-bed"></span> BEDROOMS</label> <!--<div class="btn-group">-->
-					<br>
-					<div class="btn-group" role="group">
-						<button class="btn btn-default bedroomSelectionButtons" type="button" value="0">STUDIO</button> <button class="btn btn-default bedroomSelectionButtons" type="button" value="1">1</button> <button class="btn btn-default bedroomSelectionButtons" type="button" value="2">2</button> <button class="btn btn-default bedroomSelectionButtons" type="button" value="3">3+</button>
-					</div><!--</div>-->
+			<div id="largeScreenFiltersSection">
+				<div class="row resetFiltersRow">
+					<div class="col-xs-2 col-sm-3 col-md-3 col-lg-3 filtersTitle">
+						<h4>Filters</h4>
+					</div>
+					<div class="col-xs-4 col-xs-offset-3 col-sm-3 col-sm-offset-3 col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-3 resetAllButton" role="button">
+						Reset all
+					</div>
 				</div>
-				<div class="col-sm-2 col-md-2 col-lg-2 sliderRentAmountColumn">
-					<p><label><span class="glyphicon glyphicon-usd"></span> RENT</label></p>
-					<div id="sliderRentAmount"></div>
-				</div>
-				<div class="col-sm-1 col-md-1 col-lg-1"></div>
-				<div class="col-sm-2 col-md-2 col-lg-2 moveInDateColumn">
-					<label><span class="glyphicon glyphicon-calendar"></span> MOVE IN DATE</label>
-					<div class="form-group">
-						<div class='input-group date' id="datepicker">
-							<input class="form-control" placeholder="Any Timeframe" type='text'> <span class="input-group-addon"><span class="glyphicon glyphicon-triangle-bottom"></span></span>
+				<div class="row landingPageFiltersRow">
+					<div class="col-sm-3 col-md-3 col-lg-3">
+						<label><span class="glyphicon glyphicon-bed"></span> BEDROOMS</label><br>
+						<div class="btn-group" role="group">
+							<button class="btn btn-default bedroomSelectionButtons" type="button" value="0">STUDIO</button> <button class="btn btn-default bedroomSelectionButtons" type="button" value="1">1</button> <button class="btn btn-default bedroomSelectionButtons" type="button" value="2">2</button> <button class="btn btn-default bedroomSelectionButtons" type="button" value="3">3+</button>
 						</div>
 					</div>
-				</div>
-				<div class="col-sm-2 col-md-2 col-lg-2">
-					<a aria-controls="collapseOne" aria-expanded="false" data-toggle="collapse" href="#collapseOne" id="moreFiltersButton" role="button" <label><span class="glyphicon glyphicon-filter"></span> MORE FILTERS</label></a>
-				</div>
-			</div>
-			<div class="moreFiltersRow collapse" id="collapseOne">
-				<div class="row moreFiltersSelectionRow">
-					<div class="col-sm-3 col-md-3 col-lg-3">
-						<label><span class="glyphicon glyphicon-tint"></span> BATHROOMS</label> <!--<div class="input-group">-->
-						<br>
-						<div class="btn-group">
-							<button class="btn btn-default bathroomSelectionButtons" type="button">ANY</button> <button class="btn btn-default bathroomSelectionButtons" type="button">1+</button> <button class="btn btn-default bathroomSelectionButtons" type="button">2+</button> <button class="btn btn-default bathroomSelectionButtons" type="button">3+</button>
-						</div><!--</div>-->
-					</div>
-					<div class="col-sm-2 col-md-2 col-lg-2 SQFTColumn">
-						<p><label><span class="glyphicon glyphicon-fullscreen"></span> SQFT</label></p>
-						<div id="sliderSQFT"></div>
+					<div class="col-sm-2 col-md-2 col-lg-2 sliderRentAmountColumn">
+						<p><label><span class="glyphicon glyphicon-usd"></span> RENT</label></p>
+						<div id="sliderRentAmount"></div>
 					</div>
 					<div class="col-sm-1 col-md-1 col-lg-1"></div>
-					<div class="col-sm-4 col-md-4 col-lg-4 amenitiesColumn">
-						<label><span class="glyphicon glyphicon-resize-horizontal"></span> AMENITIES</label>
-						<div class="row listOfAmenities">
-							<div class="col-sm-6 col-md-6 col-lg-6" id="leftAmenitiesList">
-								<div class="checkbox disabled">
-									<label><input type="checkbox" value="">AIR CONDITIONING</label>
-								</div>
-								<div class="checkbox">
-									<label><input type="checkbox" value="">ASSIGNED PARKING</label>
-								</div>
-							</div>
-							<div class="col-sm-6 col-md-6 col-lg-6" id="rightAmenitiesList">
-								<div class="checkbox disabled">
-									<label><input type="checkbox" value="">BALCONY</label>
-								</div>
-								<div class="checkbox">
-									<label><input type="checkbox" value="">CARPET</label>
-								</div>
-							</div>
-						</div>
-						<div class="row moreAmenitiesRow">
-							<div class="col-sm-6 col-sm-offset-6 col-md-6 col-md-offset-6 col-lg-6 col-lg-offset-6" id="moreAmenitiesButton" role="button"<label><span class="glyphicon glyphicon-chevron-down"></span> MORE</label>
+					<div class="col-sm-2 col-md-2 col-lg-2 moveInDateColumn">
+						<label><span class="glyphicon glyphicon-calendar"></span> MOVE IN DATE</label>
+						<div class="form-group">
+							<div class='input-group date' id="datepicker">
+								<input class="form-control" placeholder="Any Timeframe" type='text'> <span class="input-group-addon"><span class="glyphicon glyphicon-triangle-bottom"></span></span>
 							</div>
 						</div>
 					</div>
+					<div class="col-sm-2 col-md-2 col-lg-2">
+						<a aria-controls="collapseOne" aria-expanded="false" href="#collapseOne" id="moreFiltersButton" role="button"><label><span class="glyphicon glyphicon-filter"></span> MORE FILTERS</label></a>
+					</div>
 				</div>
-				<div class="row applyFiltersRow">
-					<!--<div class="col-sm-3 col-md-3 col-lg-3"></div>-->
-                    <button class="cancelFiltersButton"<label>Cancel</label></button> 
-                    <button class="applyFiltersButton"<label><span class="glyphicon glyphicon-ok"></span> Apply Filters</label></button>
-					<!--<div class="col-sm-3 col-md-3 col-lg-3"></div>-->
+				<div class="moreFiltersRow collapse" id="collapseOne">
+					<div class="row moreFiltersSelectionRow">
+						<div class="col-sm-3 col-md-3 col-lg-3">
+							<label><span class="glyphicon glyphicon-tint"></span> BATHROOMS</label><br>
+							<div class="btn-group">
+								<button class="btn btn-default bathroomSelectionButtons" type="button">ANY</button> <button class="btn btn-default bathroomSelectionButtons" type="button">1+</button> <button class="btn btn-default bathroomSelectionButtons" type="button">2+</button> <button class="btn btn-default bathroomSelectionButtons" type="button">3+</button>
+							</div>
+						</div>
+						<div class="col-sm-2 col-md-2 col-lg-2 SQFTColumn">
+							<p><label><span class="glyphicon glyphicon-fullscreen"></span> SQFT</label></p>
+							<div id="sliderSQFT"></div>
+						</div>
+						<div class="col-sm-1 col-md-1 col-lg-1"></div>
+						<div class="col-sm-4 col-md-4 col-lg-4 amenitiesColumn">
+							<label><span class="glyphicon glyphicon-resize-horizontal"></span> AMENITIES</label>
+							<div class="row listOfAmenities">
+								<div class="col-sm-6 col-md-6 col-lg-6" id="leftAmenitiesList">
+									<div class="checkbox disabled">
+										<label><input type="checkbox" value="">AIR CONDITIONING</label>
+									</div>
+									<div class="checkbox">
+										<label><input type="checkbox" value="">ASSIGNED PARKING</label>
+									</div>
+								</div>
+								<div class="col-sm-6 col-md-6 col-lg-6" id="rightAmenitiesList">
+									<div class="checkbox disabled">
+										<label><input type="checkbox" value="">BALCONY</label>
+									</div>
+									<div class="checkbox">
+										<label><input type="checkbox" value="">CARPET</label>
+									</div>
+								</div>
+							</div>
+							<div class="row moreAmenitiesRow">
+								<div class="col-sm-6 col-sm-offset-6 col-md-6 col-md-offset-6 col-lg-6 col-lg-offset-6" id="moreAmenitiesButton" role="button">
+									<label><span class="glyphicon glyphicon-chevron-down"></span> MORE</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row applyFiltersRow">
+						<button class="cancelFiltersButton"><label>Cancel</label></button> <button class="applyFiltersButton"><label><span class="glyphicon glyphicon-ok"></span> Apply Filters</label></button>
+					</div>
 				</div>
 			</div>
 		</div>
-        </div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js">
 	</script> 
